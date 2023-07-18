@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Todo_Asp_Mvc.Net.Models.Person>
+
+<a href="@Url.Action("Create","Person")" class="btn m-2 btn-primary"> Creer une personne </a>
+<h2>Liste des personnes</h2>
+<table class="table table-responsive table-bordered">
+    <thead class="bg-info text-center">
+        <tr class="text-center">
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>DateNaissance</th>
+            <th>Adresse</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+
+        <tr class="text-center">
+            <td>
+                @Html.Display(item.Nom)
+                @*@item.Nom*@
+            </td>
+            <td>
+                @item.Prenom
+            </td>
+            <td>
+                @item.DateNaissance
+            </td>
+            <td>
+                @item.Adresse.Name -   Rue @item.Adresse.Rue - Angle @item.Adresse.Angle 
+
+            </td>
+            <td>
+                <a href="@Url.Action("Delete", "Person", new { @item.Id } )" onclick="return confirm(" Voulez vous supprimer cet élément ")" class="btn btn-danger btn-sm" > <i class="fa fa-trash"></i> Supprimer</a>
+                <a href="@Url.Action("Edit", "Person", new { @item.Id })" class="btn btn-warning btn-sm"> <i class="fa fa-edit"></i> Edit</a>
+                <a href="@Url.Action("Show", "Person", new { @item.Id })" class="btn btn-info btn-sm"> <i class="fa fa-shower"></i> Show</a>
+            </td>
+        </tr>
+            }
+    </tbody>
+</table>

@@ -1,0 +1,27 @@
+﻿@model  Todo_Asp_Mvc.Net.Models.Person
+
+<a href="@Url.Action("Index","Person")" class="btn btn-sm"><i class="fa fa-arrow-circle-left"></i> Retour</a>
+<h1 class="text-center">
+    Affichage d'une personne
+</h1>
+
+@if (@Model != null)
+{
+<ul class="list-group">
+    <li class="list-group-item">
+        Id : <b> @Model.Id</b>
+    </li>
+    <li class="list-group-item">
+        Prenom :  <b>@Model.Prenom</b>
+    </li>
+    <li class="list-group-item">
+        Nom : <b>@Model.Nom</b>
+    </li>
+    <li class="list-group-item">
+        Adresse :  <b>@Model.Adresse.Name - rue @Model.Adresse.Rue - Angle (@Model.Adresse.Angle)</b>
+    </li>
+</ul>
+}
+else { 
+    <h4>Cette personne avec Id est introuvable </h4>
+}

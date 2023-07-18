@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Todo_Asp_Mvc.Net.Models.Adresse>
+
+<a href="@Url.Action("Index","Person")" class="btn m-1 btn-sm"><i class="fa fa-arrow-circle-left"></i> Retour</a>
+<h2>@ViewBag.Title</h2>
+<form class="form-group-lg-12  container" method="post">
+    <p>
+        <input type="text" name="Nom" placeholder="Votre Nom" class="form-control" />
+    </p>
+    <p>
+        <input type="text" name="prenom" placeholder="Votre Prenom" class="form-control" />
+    </p>
+    <p>
+        <input type="datetime-local" name="DateNaissance" placeholder="Votre date de naissance" class="form-control" />
+    </p>
+    <p>
+        <select name="AdresseId" class="form-control">
+            @foreach(var item in Model)
+            {
+            <option value="@item.Id"> @item.Name - rue @item.Rue - angle @item.Angle </option>
+            }
+        </select>
+    </p>
+    <p>
+        <button type="submit" class="btn btn-success btn-sm" @Url.Action("Store", "Person")> <i class="fa fa-save"></i> Enregistrer </button>
+        <button type="reset" class="btn btn-danger btn-sm"> <i class="fa fa-cancel"></i> Annuler </button>
+    </p>
+</form>

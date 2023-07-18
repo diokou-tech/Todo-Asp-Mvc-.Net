@@ -20,5 +20,11 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 300px;
+}
+.m-1{
+    margin: 2px !important;
+}
+.m-2 {
+    margin: 4px !important;
 }
