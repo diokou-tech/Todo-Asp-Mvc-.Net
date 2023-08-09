@@ -126,10 +126,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Utils.cs" />
+    <Compile Include="Controllers\AdressesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\TestController.cs" />
-    <Compile Include="Controllers\TodoController.cs" />
     <Compile Include="Data\Todo_Asp_MvcNetContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -142,13 +143,19 @@
     <Compile Include="Migrations\202307151018117_persons_adresses_timestamps.Designer.cs">
       <DependentUpon>202307151018117_persons_adresses_timestamps.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202307171636278_add_others_properties_on_tables.cs" />
-    <Compile Include="Migrations\202307171636278_add_others_properties_on_tables.Designer.cs">
-      <DependentUpon>202307171636278_add_others_properties_on_tables.cs</DependentUpon>
+    <Compile Include="Migrations\202307181307213_add_properties_tables_constraints.cs" />
+    <Compile Include="Migrations\202307181307213_add_properties_tables_constraints.Designer.cs">
+      <DependentUpon>202307181307213_add_properties_tables_constraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307181542200_default.cs" />
+    <Compile Include="Migrations\202307181542200_default.Designer.cs">
+      <DependentUpon>202307181542200_default.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Adresse.cs" />
     <Compile Include="Models\CommonModel.cs" />
+    <Compile Include="Models\MessageEmail.cs" />
+    <Compile Include="Models\Metadata.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\TimeStampCustom.cs" />
     <Compile Include="Models\Todo.cs" />
@@ -157,6 +164,8 @@
     <Compile Include="Repositories\IRepositoryPerson.cs" />
     <Compile Include="Repositories\RepositoryAdresse.cs" />
     <Compile Include="Repositories\RepositoryPerson.cs" />
+    <Compile Include="Services\IMessagerie.cs" />
+    <Compile Include="Services\Messagerie.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -224,6 +233,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Person\SendEmail.cshtml" />
+    <Content Include="Views\Shared\_Flash.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -239,19 +250,19 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
-    <Content Include="Views\Todo\Create.cshtml" />
-    <Content Include="Views\Todo\Delete.cshtml" />
-    <Content Include="Views\Todo\Details.cshtml" />
-    <Content Include="Views\Todo\Edit.cshtml" />
-    <Content Include="Views\Todo\Index.cshtml" />
     <Content Include="Views\Person\Index.cshtml" />
     <Content Include="Views\Person\Create.cshtml" />
     <Content Include="Views\Person\Show.cshtml" />
     <Content Include="Views\Person\Edit.cshtml" />
+    <Content Include="Views\Adresses\Create.cshtml" />
+    <Content Include="Views\Adresses\Delete.cshtml" />
+    <Content Include="Views\Adresses\Details.cshtml" />
+    <Content Include="Views\Adresses\Edit.cshtml" />
+    <Content Include="Views\Adresses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Services\" />
+    <Folder Include="Views\Adresse\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -273,8 +284,11 @@
     <EmbeddedResource Include="Migrations\202307151018117_persons_adresses_timestamps.resx">
       <DependentUpon>202307151018117_persons_adresses_timestamps.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307171636278_add_others_properties_on_tables.resx">
-      <DependentUpon>202307171636278_add_others_properties_on_tables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202307181307213_add_properties_tables_constraints.resx">
+      <DependentUpon>202307181307213_add_properties_tables_constraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307181542200_default.resx">
+      <DependentUpon>202307181542200_default.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

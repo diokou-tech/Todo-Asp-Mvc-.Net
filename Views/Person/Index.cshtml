@@ -1,25 +1,41 @@
-﻿@model IEnumerable<Todo_Asp_Mvc.Net.Models.Person>
+﻿@using System.Activities.Statements
+@model IEnumerable<Todo_Asp_Mvc.Net.Models.Person>
 
-<a href="@Url.Action("Create","Person")" class="btn m-2 btn-primary"> Creer une personne </a>
-<h2>Liste des personnes</h2>
-<table class="table table-responsive table-bordered">
-    <thead class="bg-info text-center">
-        <tr class="text-center">
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>DateNaissance</th>
-            <th>Adresse</th>
-            <th>Actions</th>
-        </tr>
+@{ 
+   int index = 0;
+}
+
+<a href="@Url.Action("Create","Person")" class="btn m-2 btn-default "> <i class="fa fa-add"></i> Ajouter une personne </a>
+<div class="flex flex-justify-between">
+    <span class="h4 col-lg-6"> <i class="fa fa-list"></i> Liste des personnes <span class="badge">@ViewBag.CountTotal</span> </span>
+    <span>
+        <a href="@Url.Action("Export", "Person")" onclick="return confirm('Voulez-vous exporter la liste des personnes sous format .csv')" class="btn btn-default"> <i class="fa fa-file-csv"></i> Export Csv</a>
+        <a href="@Url.Action("ExportPdf", "Person")" onclick="return confirm('Voulez-vous exporter la liste des personnes sous format .pdf')" class="btn btn-default"> <i class="fa fa-file-pdf"></i> Export Pdf</a>
+    </span>
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Date</th>
+        <th>Adresse</th>
+        <th>Date de création</th>
+        <th>Date de modification</th>
+        <th>Actions</th>
+    </tr>
     </thead>
     <tbody>
-        @foreach(var item in Model)
-            {
-
-        <tr class="text-center">
+    @foreach(var item in Model)
+    {
+        index++;
+        <tr>
             <td>
-                @Html.Display(item.Nom)
-                @*@item.Nom*@
+                @index
+            </td>
+            <td>
+                @item.Nom
             </td>
             <td>
                 @item.Prenom
@@ -29,14 +45,44 @@
             </td>
             <td>
                 @item.Adresse.Name -   Rue @item.Adresse.Rue - Angle @item.Adresse.Angle 
-
             </td>
             <td>
-                <a href="@Url.Action("Delete", "Person", new { @item.Id } )" onclick="return confirm('Voulez vous supprimer cet élément')" class="btn btn-danger btn-sm" > <i class="fa fa-trash"></i> Supprimer</a>
-                <a href="@Url.Action("Edit", "Person", new { @item.Id })" class="btn btn-warning btn-sm"> <i class="fa fa-edit"></i> Edit</a>
-                <a href="@Url.Action("Show", "Person", new { @item.Id })" class="btn btn-info btn-sm"> <i class="fa fa-shower"></i> Show</a>
+                @item.CreatedAt
+            </td>
+            <td>
+                @item.UpdatedAt
+            </td>
+            <td>
+                <a href="@Url.Action("Delete", "Person", new { @item.Id } )" title="supprimer" onclick="return confirm('Voulez vous supprimer cet élément')" class="btn btn-default btn-sm" > <i class="fa fa-trash"></i> </a>
+                <a href="@Url.Action("Edit", "Person", new { @item.Id })" title="Edit" class="btn btn-sm btn-default"> <i class="fa fa-edit"></i> </a>
+                <a href="@Url.Action("Show", "Person", new { @item.Id })" title="Afficher" class="btn btn-sm btn-default"> <i class="fa fa-shower"></i> </a>
+                <a href="@Url.Action("SendEmail", "Person", new { @item.Id })" title="Send Email" class="btn btn-sm btn-default"> <i class="fa fa-envelope"></i> </a>
             </td>
         </tr>
-            }
+    }
     </tbody>
 </table>
+<div class="container d-flex justify-content-between">
+    @if (@ViewBag.MetaData.HasPrev == true)
+    {
+    <a class="btn btn-default btn-sm"  href="@Url.Action("Index", new { page = @ViewBag.MetaData.PrevPage, pageSize = @ViewBag.MetaData.PageSize })">&larr; Prev</a>
+    }
+    else
+    {
+        <a class="btn btn-default  disabled btn-sm" href="">&larr; Prev</a>
+    }
+    <span class="m-3" style="margin-left: 3px;">
+        @for (int i = 1; i <= @ViewBag.MetaData.TotalPages; i++)
+        {
+            <a class="btn btn-sm  btn-default" href="@Url.Action("Index", new { page = @i, pageSize = @ViewBag.MetaData.PageSize })">@i</a>
+        }
+    </span>
+    @if (@ViewBag.MetaData.HasNext == true)
+    {
+    <a class="btn btn-default btn-sm"  href="@Url.Action("Index", new { page = @ViewBag.MetaData.NextPage, pageSize = @ViewBag.MetaData.PageSize })">&rarr; Next</a>
+    }
+    else
+        {
+        <a class="btn btn-default disabled btn-sm text-muted" href="">&rarr; Next</a>
+        }
+</div>

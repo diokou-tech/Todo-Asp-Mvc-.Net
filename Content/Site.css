@@ -24,7 +24,23 @@ textarea {
 }
 .m-1{
     margin: 2px !important;
-}
+} 
 .m-2 {
     margin: 4px !important;
+}
+.flex{
+    display: flex !important;
+    align-items: center;
+    flex-direction: row;
+    /*border: 2px solid red;*/
+    width: 100%;
+}
+.flex-justify-center{
+    justify-content: center;
+}
+.flex-justify-between{
+    justify-content: space-between;
+}
+.flex-justify-around{
+    justify-content: space-around;
 }

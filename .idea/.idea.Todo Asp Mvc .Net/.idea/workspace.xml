@@ -8,15 +8,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24936609-c620-47e8-b243-8dee10e34853" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Todo Asp Mvc .Net/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Todo Asp Mvc .Net/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Todo Asp Mvc .Net/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Todo Asp Mvc .Net/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App_Start/Utils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/MessageEmail.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/Metadata.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/IMessagerie.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/Messagerie.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Person/SendEmail.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Shared/_Flash.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Todo Asp Mvc .Net/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Todo Asp Mvc .Net/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App_Start/RouteConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App_Start/RouteConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/PersonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/PersonController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Todo_Asp_MvcNetContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Todo_Asp_MvcNetContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Global.asax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Global.asax.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/202307171636278_add_others_properties_on_tables.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/202307171636278_add_others_properties_on_tables.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/202307171636278_add_others_properties_on_tables.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/Configuration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/Configuration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Person.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Person.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/TimeStampCustom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TimeStampCustom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repositories/IRepositoryPerson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/IRepositoryPerson.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repositories/RepositoryAdresse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/RepositoryAdresse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repositories/RepositoryPerson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/RepositoryPerson.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Todo Asp Mvc .Net.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Todo Asp Mvc .Net.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Person/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Person/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Person/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Person/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Person/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Person/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Person/Show.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Person/Show.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Todo/Create.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Todo/Delete.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Todo/Details.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Todo/Edit.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Todo/Index.cshtml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.config" beforeDir="false" afterPath="$PROJECT_DIR$/Web.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/packages.config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +51,23 @@
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/000f54522ad145bf987b3043022f97994f4ad0/1c/34271fde/InternalContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/000f54522ad145bf987b3043022f97994f4ad0/8e/f131e02f/RetryAction`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0025bc3e22524ba9a352d7f62faa5b3f97ad0/f7/d3d9c820/DefaultSqlExecutionStrategy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03c98cfc8623445a8db7b66c6ffa5def85db8/7c/ad619176/EditorExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/TodoController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Data/Todo_Asp_MvcNetContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Migrations/202307130958514_init.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Migrations/Configuration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/ousma/Documents/Workspace Gainde/Todo Asp Mvc .Net/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
   <component name="ProjectId" id="2SVrtkMRplwjbx4eGiKo83fJc0M" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,10 +89,14 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.environmentSetup&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.smartKeys_rider&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver.localdb&quot;
+    ],
     &quot;rider.external.source.directories&quot;: [
       &quot;C:\\Users\\ousma\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
       &quot;C:\\Users\\ousma\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
@@ -64,9 +106,9 @@
 }</component>
   <component name="RunManager">
     <configuration name="Todo Asp Mvc .Net - IIS Express" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../../Program Files (x86)/IIS Express/iisexpress.exe" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;/config:$PROJECT_DIR$/.idea/config/applicationhost.config&quot; &quot;/site:Todo Asp Mvc .Net&quot; /apppool:Clr4IntegratedAppPool" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../../../Program Files (x86)/IIS Express" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -76,8 +118,8 @@
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="Web" />
-      <option name="PROJECT_TFM" value="" />
-      <browser url="https://localhost:44353/" start="true" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.7.2" />
+      <browser url="https://localhost:44353/" name="37cae5b9-e8b2-4949-9172-aafa37fbc09c" start="true" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -94,6 +136,23 @@
       <workItem from="1689242814950" duration="1363000" />
       <workItem from="1689247679799" duration="376000" />
       <workItem from="1689414634145" duration="386000" />
+      <workItem from="1689675211788" duration="9797000" />
+      <workItem from="1689692202196" duration="176000" />
+      <workItem from="1689772955418" duration="1454000" />
+      <workItem from="1689781452833" duration="40000" />
+      <workItem from="1689851754844" duration="8697000" />
+      <workItem from="1689866356070" duration="3318000" />
+      <workItem from="1689872053034" duration="747000" />
+      <workItem from="1689929741698" duration="4298000" />
+      <workItem from="1690410629602" duration="23000" />
+      <workItem from="1690794815852" duration="11970000" />
+      <workItem from="1690882884457" duration="3552000" />
+      <workItem from="1690902216854" duration="2901000" />
+      <workItem from="1691162622123" duration="2606000" />
+      <workItem from="1691165942513" duration="1675000" />
+      <workItem from="1691269681680" duration="2769000" />
+      <workItem from="1691583529779" duration="5393000" />
+      <workItem from="1691594932320" duration="973000" />
     </task>
     <servers />
   </component>
@@ -101,6 +160,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

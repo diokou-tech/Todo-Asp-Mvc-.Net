@@ -1,34 +1,37 @@
 ﻿@model  Todo_Asp_Mvc.Net.Models.Person
 <a href="@Url.Action("Index","Person")" class="btn btn-sm"><i class="fa fa-arrow-circle-left"></i> Retour</a>
 
-<h2>@ViewBag.Title</h2>
+<h2 class="h3">@ViewBag.Title</h2>
 
-<form class="form-group-lg-12 " method="post" action="@Url.Action("Store","Person")">
+<form class="form-group-lg-12 " method="post" action="@Url.Action("Update","Person")">
 
     @Html.AntiForgeryToken()
     <section>
+        @Html.Hidden("Id",Model.Id)
         <p>
-            <label>Nom</label>
-            <input type="text" name="Nom" value="@Model.Nom" class="form-control" />
+            @Html.LabelFor(Model => Model.Nom)
+            @Html.TextBox("Nom",@Model.Nom, new {@class="form-control"})
         </p>
         <p>
-            <label>Prenom</label>
-            <input type="text" name="Prenom" class="form-control" value="@Model.Prenom" />
+            @Html.LabelFor(Model => Model.Prenom)
+            @Html.TextBox("Prenom",@Model.Prenom, new {@class="form-control"})
         </p>
         <p>
-            <label>Date de Naissance</label>
-            <input type="datetime-local" name="Nom" class="form-control" value="@Model.DateNaissance" />
+            @Html.LabelFor(Model => Model.DateNaissance)
+            @Html.TextBox("DateNaissance",@Model.DateNaissance.ToString(), new {@class="form-control", @type="date"})
+            @Html.ValidationMessageFor(model => model.DateNaissance, "",new { @class="text-danger" })
         </p>
+        <div class="form-group">
+            <label> Adresse </label>
+            @Html.DropDownList("AdresseId", new SelectList(ViewBag.Adresses, "Id", "Name", @Model.AdresseId), "Selectionner Adresse...", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.AdresseId, "", new { @class = "text-danger" })
+        </div>
         <p>
-            <label>Adresse</label>
-            <select class="form-control">
-                <option value="1"> value</option>
-            </select>
-        </p>
-        <p>
-            <button type="submit" class="btn btn-sm btn-success"> <i class="fa fa-user-edit"></i> Modifier</button>
-            <button type="reset" class="btn btn-sm btn-danger"> <i class="fa fa-cancel"></i> Annuler</button>
+            <button type="submit" class="btn btn-sm btn-default"> <i class="fa fa-user-edit"></i> Modifier</button>
+            <button type="reset" class="btn btn-sm btn-default"> <i class="fa fa-cancel"></i> Annuler</button>
         </p>
     </section>
 </form>
-
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

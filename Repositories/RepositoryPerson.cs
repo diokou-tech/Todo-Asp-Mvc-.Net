@@ -15,20 +15,17 @@ namespace Todo_Asp_Mvc.Net.Repositories
         {
             _context = context;
         }
-
         public void Create(Person item)
         {
             _context.Persons.Add(item);
             Save();
         }
-
         public void CreateAll(IEnumerable<Person> items)
         {
             _context.Persons.AddRange(items);
             Save();
 
         }
-
         public bool Delete(int id)
         {
             Person person = _context.Persons.Find(id);
@@ -49,23 +46,29 @@ namespace Todo_Asp_Mvc.Net.Repositories
                 _context.Persons.RemoveRange(personList);
                 Save();
                 return true;
-            }
+            }   
             return false;
         }
 
+        public int CountTotal()
+        {
+            return _context.Persons.Count();
+        }
         public void Dispose()
         {
-            throw new NotImplementedException();
+            //this.Dispose();
         }
-
-        public IEnumerable<Person> GetAll()
+        public IEnumerable<Person> GetAll(int page, int pageSize)
         {
+            var _skip = pageSize*(page-1);
             var result = _context.Persons
                 .Include(per => per.Adresse)
-                .OrderBy(per => per.CreatedAt).ToList();
+                .OrderByDescending(per => per.UpdatedAt)
+                .Skip(_skip)
+                .Take(pageSize)
+                .ToList();
             return result;
         }
-
         public Person GetOne(int id)
         {
             var result = _context.Persons

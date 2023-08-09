@@ -20,6 +20,11 @@ namespace Todo_Asp_Mvc.Net.Data
         public DbSet<Todo> Todoes { get; set; }
         public DbSet<Adresse> Adresses { get; set; }
         public DbSet<Person> Persons { get; set; }
-
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder); 
+            modelBuilder.Properties<DateTime>()
+                .Configure(c => c.HasColumnType("datetime2"));
+        }
     }
-}
+}   

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Todo_Asp_Mvc.Net.Models.Todo>
+﻿@model IEnumerable<Todo_Asp_Mvc.Net.Models.Adresse>
 
 @{
     ViewBag.Title = "Index";
@@ -10,18 +10,21 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
+    <tr>IN
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.Rue)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Date)
+            @Html.DisplayNameFor(model => model.Angle)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateExecution)
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedAt)
         </th>
         <th></th>
     </tr>
@@ -32,13 +35,16 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.Rue)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Date)
+            @Html.DisplayFor(modelItem => item.Angle)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DateExecution)
+            @Html.DisplayFor(modelItem => item.CreatedAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedAt)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

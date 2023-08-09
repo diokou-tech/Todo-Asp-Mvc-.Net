@@ -7,13 +7,13 @@ namespace Todo_Asp_Mvc.Net.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class add_others_properties_on_tables : IMigrationMetadata
+    public sealed partial class _default : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(add_others_properties_on_tables));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_default));
         
         string IMigrationMetadata.Id
         {
-            get { return "202307171636278_add_others_properties_on_tables"; }
+            get { return "202307181542200_default"; }
         }
         
         string IMigrationMetadata.Source

@@ -8,19 +8,26 @@
 @if (@Model != null)
 {
 <ul class="list-group">
-    <li class="list-group-item">
-        Id : <b> @Model.Id</b>
-    </li>
+    @* <li class="list-group-item"> *@
+    @*     Id : <b> @Model.Id</b> *@
+    @* </li> *@
     <li class="list-group-item">
         Prenom :  <b>@Model.Prenom</b>
     </li>
     <li class="list-group-item">
         Nom : <b>@Model.Nom</b>
     </li>
+        <li class="list-group-item">
+            Date de naissance : <b>@Model.DateNaissance</b>
+        </li>
     <li class="list-group-item">
         Adresse :  <b>@Model.Adresse.Name - rue @Model.Adresse.Rue - Angle (@Model.Adresse.Angle)</b>
     </li>
 </ul>
+    <div class="form-group">
+    <a class="btn btn-default btn-sm" href="@Url.Action("Edit","Person", new {Id = @Model.Id})"> <i class="fa fa-edit" ></i> </a>
+        <a class="btn btn-default btn-sm" onclick="return confirm('Voulez-vous supprimer cet élément ')" href="@Url.Action("Delete","Person",new {Id = @Model.Id})"> <i class="fa fa-trash" ></i> </a>
+    </div>
 }
 else { 
     <h4>Cette personne avec Id est introuvable </h4>

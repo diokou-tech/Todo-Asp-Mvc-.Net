@@ -9,12 +9,13 @@ namespace Todo_Asp_Mvc.Net.Repositories
 {
     public interface IRepositoryPerson : IDisposable
     {
-        IEnumerable<Person> GetAll();
+        IEnumerable<Person> GetAll(int page, int pageSize);
         Person GetOne(int id);
         void Create(Person item);
         void CreateAll(IEnumerable<Person> items);
         void Update(Person item);
         bool Delete(int id);
         bool DeleteAll(IEnumerable<int> ids);
+        int CountTotal();
     }
 }

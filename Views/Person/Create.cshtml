@@ -1,27 +1,43 @@
-﻿@model IEnumerable<Todo_Asp_Mvc.Net.Models.Adresse>
+﻿@model Todo_Asp_Mvc.Net.Models.Person
 
-<a href="@Url.Action("Index","Person")" class="btn m-1 btn-sm"><i class="fa fa-arrow-circle-left"></i> Retour</a>
+<a href="@Url.Action("Index","Person")" class="btn m-1 btn-sm   "><i class="fa fa-arrow-circle-left"></i> Retour</a>
 <h2>@ViewBag.Title</h2>
-<form class="form-group-lg-12  container" method="post">
-    <p>
-        <input type="text" name="Nom" placeholder="Votre Nom" class="form-control" />
-    </p>
-    <p>
-        <input type="text" name="prenom" placeholder="Votre Prenom" class="form-control" />
-    </p>
-    <p>
-        <input type="datetime-local" name="DateNaissance" placeholder="Votre date de naissance" class="form-control" />
-    </p>
-    <p>
-        <select name="AdresseId" class="form-control">
-            @foreach(var item in Model)
-            {
-            <option value="@item.Id"> @item.Name - rue @item.Rue - angle @item.Angle </option>
-            }
-        </select>
-    </p>
-    <p>
-        <button type="submit" class="btn btn-success btn-sm" @Url.Action("Store", "Person")> <i class="fa fa-save"></i> Enregistrer </button>
-        <button type="reset" class="btn btn-danger btn-sm"> <i class="fa fa-cancel"></i> Annuler </button>
-    </p>
-</form>
+<div class="container justify-content-center d-flex">
+<!-- form with razor page -->
+    <div class="col-lg-6">
+        @using (Html.BeginForm("Create", "Person", FormMethod.Post, new { @class = "form-group-lg-12", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <form class="user">
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.Nom)
+                    @Html.EditorFor(model => model.Nom, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nom, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.Prenom)
+                    @Html.EditorFor(model => model.Prenom, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Prenom, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.DateNaissance)
+                    @Html.EditorFor(model => model.DateNaissance, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                    @* <input type="datetime-local" asp-for="DateNaissance" class="form-control"/> *@
+                    @Html.ValidationMessageFor(model => model.DateNaissance, "", new { @class = "text-danger" , @type = "datetime-local" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.AdresseId)
+                    @Html.DropDownList("AdresseId", new SelectList(ViewBag.Adresses, "Id", "Name"), "Selectionner Adresse ...", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.AdresseId, "", new { @class = "text-danger" })
+                </div>
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-default btn-sm"> <i class="fa fa-save"></i> Enregistrer </button>
+                          <button type="reset" class="btn btn-default btn-sm"> <i class="fa fa-cancel"></i> Annuler </button>
+                          </div>
+            </form>
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Todo_Asp_Mvc.Net.Data;
 
 namespace Todo_Asp_Mvc.Net
 {
@@ -16,6 +18,7 @@ namespace Todo_Asp_Mvc.Net
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer<Todo_Asp_MvcNetContext>(null);
         }
     }
 }

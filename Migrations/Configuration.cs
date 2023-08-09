@@ -24,52 +24,53 @@ namespace Todo_Asp_Mvc.Net.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            //context.Adresses.AddOrUpdate(
-            //    new Models.Adresse
-            //    {
-            //        Angle = 30,
-            //        Name = "Yeumbeul",
-            //        Rue = 12,
-            //        CreatedAt = DateTime.UtcNow,
-            //        UpdatedAt = DateTime.UtcNow
-            //    }
-            //    );
-            //context.Adresses.AddOrUpdate(
-            //    new Models.Adresse
-            //    {
-            //        Angle = 40,
-            //        Name = "Malika",
-            //        Rue = 10,
-            //        CreatedAt = DateTime.UtcNow.AddMinutes(1),
-            //        UpdatedAt = DateTime.UtcNow.AddMinutes(1)
-            //    }
-            //    );
-
+            context.Adresses.AddOrUpdate(
+                new Models.Adresse
+                {
+                    Angle = 30,
+                    Name = "Yeumbeul",
+                    Rue = 12,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                }
+                );
+            context.Adresses.AddOrUpdate(
+                new Models.Adresse
+                {
+                    Angle = 40,
+                    Name = "Malika",
+                    Rue = 10,
+                    CreatedAt = DateTime.UtcNow.AddMinutes(1),
+                    UpdatedAt = DateTime.UtcNow.AddMinutes(1)
+                }
+                );
+            context.SaveChanges();
             // add persons
-            for(int i =0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
+
             {
                 context.Persons.Add(
                     new Models.Person
                     {
                         Nom = "Cheikhou",
                         Prenom = "Diokou",
-                        AdresseId = i == 2 ? 1 : 2 ,
+                        AdresseId = i == 2 ? 1 : 2,
                         DateNaissance = DateTime.Now,
                         CreatedAt = DateTime.UtcNow.AddMinutes(1),
                         UpdatedAt = DateTime.UtcNow.AddMinutes(1)
                     }
-                    ); 
-            context.Persons.Add(
-                new Models.Person
-                {
-                    Nom = "Dabo",
-                    Prenom = "Bassirou Serigne",
-                    AdresseId = i == 2 ? 1 : 2  ,
-                    DateNaissance = DateTime.Now,
-                    CreatedAt = DateTime.UtcNow.AddMinutes(1),
-                    UpdatedAt = DateTime.UtcNow.AddMinutes(1)
-                }
-                );
+                    );
+                context.Persons.Add(
+                    new Models.Person
+                    {
+                        Nom = "Dabo",
+                        Prenom = "Bassirou Serigne",
+                        AdresseId = i == 2 ? 1 : 2,
+                        DateNaissance = DateTime.Now,
+                        CreatedAt = DateTime.UtcNow.AddMinutes(1),
+                        UpdatedAt = DateTime.UtcNow.AddMinutes(1)
+                    }
+                    );
             }
         }
     }

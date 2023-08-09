@@ -18,7 +18,7 @@ namespace Todo_Asp_Mvc.Net.Repositories
 
         public void Create(Adresse item)
         {
-            _context.Adresses.Add(item);
+            _context.Adresses.Add(item);    
             Save();
         }
 
@@ -55,7 +55,7 @@ namespace Todo_Asp_Mvc.Net.Repositories
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            this.Dispose();
         }
 
         public IEnumerable<Adresse> GetAll()
